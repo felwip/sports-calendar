@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/sport-events",
+      "handler": "sport-event.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/sport-events/count",
+      "handler": "sport-event.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/sport-events/:id",
+      "handler": "sport-event.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/sport-events",
+      "handler": "sport-event.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/sport-events/:id",
+      "handler": "sport-event.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/sport-events/:id",
+      "handler": "sport-event.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

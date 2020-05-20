@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "venues",
+  "info": {
+    "name": "Venue"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "location_name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "capacity": {
+      "type": "integer"
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "venue_type": {
+      "type": "enumeration",
+      "enum": [
+        "indoors",
+        "outdoors"
+      ]
+    },
+    "sport_events": {
+      "collection": "sport-event",
+      "via": "venue"
+    }
+  }
+}

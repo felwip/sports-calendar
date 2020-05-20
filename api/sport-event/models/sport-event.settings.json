@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sport_events",
+  "info": {
+    "name": "Sport-Event"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "details": {
+      "type": "text",
+      "maxLength": 300
+    },
+    "date": {
+      "type": "datetime",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "host": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "hosted_sport_events"
+    },
+    "attendees": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "attending_sport_events",
+      "dominant": true
+    },
+    "event_category": {
+      "via": "sports_type",
+      "model": "event-category"
+    },
+    "venue": {
+      "via": "sport_events",
+      "model": "venue"
+    }
+  }
+}

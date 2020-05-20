@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_categories",
+  "info": {
+    "name": "event-category"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "category_name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "sports_type": {
+      "collection": "sport-event",
+      "via": "event_category"
+    }
+  }
+}
